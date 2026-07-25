@@ -1,0 +1,134 @@
+{
+  "product": {
+    "name": "Keyword Watch",
+    "version": "1.0.0",
+    "category": "Tools",
+    "singlePurpose": {
+      "en": "Subscribe to keywords and monitor Baidu Index and Google Trends locally, then badge-alert when search interest changes significantly.",
+      "zh_CN": "订阅关键词，在本地监测百度指数与 Google Trends，并在搜索热度显著变化时通过角标提醒。",
+      "zh_TW": "訂閱關鍵詞，在本地監測百度指數與 Google Trends，並在搜尋熱度顯著變化時透過角標提醒。"
+    },
+    "privacyPolicyUrl": "https://keyword-watch-privacy.pages.dev/",
+    "supportUrl": "https://github.com/baozheliu/keyword-trend-monitor/issues",
+    "homepageUrl": "https://github.com/baozheliu/keyword-trend-monitor"
+  },
+  "permissions": {
+    "storage": "Stores subscription settings, fetched trend series, alert history, and UI state locally in chrome.storage.local so charts and alerts work offline between checks.",
+    "alarms": "Schedules the hourly automatic trend check and catch-up after the browser restarts.",
+    "cookies": "Detects when the user logs in to Baidu Index by observing whether the BDUSS session cookie exists or appears, so Baidu fetches can resume immediately. Cookie values are never persisted or uploaded by the extension.",
+    "host:https://index.baidu.com/*": "Fetches Baidu Index time series for the user’s subscribed keywords using the user’s existing Baidu login session.",
+    "host:https://trends.google.com/*": "Fetches Google Trends time series for the user’s subscribed keywords."
+  },
+  "privacy": {
+    "usesRemoteCode": false,
+    "dataTypes": [
+      "User content (subscription names, keywords, alert settings, optional icons)",
+      "Website content (trend/index values returned by Baidu Index and Google Trends)",
+      "Authentication information (presence check of Baidu BDUSS cookie; value not stored)"
+    ],
+    "transmittedOffDevice": true,
+    "transmittedOffDeviceDetails": "Subscribed keywords and selected region settings are sent to index.baidu.com and/or trends.google.com solely to retrieve trend data. No developer-operated server receives user data.",
+    "sharedWithThirdParties": false,
+    "soldOrUsedForAdvertising": false,
+    "limitedUseCertification": true
+  },
+  "consistencyMatrix": [
+    {
+      "feature": "Save subscriptions and history",
+      "code": "src/store/db.ts, src/store/repo.ts",
+      "permission": "storage",
+      "data": "Local subscription config, series, alerts",
+      "storeAnswer": "User content + website content, local only retention",
+      "privacySection": "Data the extension handles / Retention"
+    },
+    {
+      "feature": "Hourly refresh",
+      "code": "src/background/index.ts alarms",
+      "permission": "alarms",
+      "data": "None beyond triggering checks",
+      "storeAnswer": "alarms justification",
+      "privacySection": "Permissions"
+    },
+    {
+      "feature": "Resume Baidu fetch after login",
+      "code": "src/background/index.ts cookies.onChanged; src/background/checker.ts isBaiduLoggedIn",
+      "permission": "cookies",
+      "data": "BDUSS presence only",
+      "storeAnswer": "Authentication information handled locally; not stored",
+      "privacySection": "Permissions / Authentication"
+    },
+    {
+      "feature": "Fetch Baidu Index",
+      "code": "src/data/baidu.ts",
+      "permission": "host https://index.baidu.com/*",
+      "data": "Keywords + area → Baidu; series stored locally",
+      "storeAnswer": "transmittedOffDevice=true to Baidu for fetch purpose",
+      "privacySection": "Network requests"
+    },
+    {
+      "feature": "Fetch Google Trends",
+      "code": "src/data/google.ts",
+      "permission": "host https://trends.google.com/*",
+      "data": "Keywords + geo → Google; series stored locally",
+      "storeAnswer": "transmittedOffDevice=true to Google for fetch purpose",
+      "privacySection": "Network requests"
+    },
+    {
+      "feature": "Local alert engine + badge",
+      "code": "src/core/detect/*, src/background/badge.ts",
+      "permission": "storage (read/write alerts)",
+      "data": "Local alert records; no remote analytics",
+      "storeAnswer": "No remote code; no developer upload",
+      "privacySection": "Summary / Remote code"
+    }
+  ],
+  "locales": {
+    "en": {
+      "shortDescription": "Subscribe to keywords and track Baidu Index and Google Trends locally. A badge alerts you when search interest changes significantly.",
+      "detailedDescription": "Keyword Watch keeps an eye on search interest for the keywords you care about.\n\nAdd up to 5 subscriptions (5 keywords each). Choose Baidu Index, Google Trends, or both, pick a region, and pick an alert style — from smart monitoring to surge, streak, reversal, drop, volatility, or custom rules — at high / standard / low sensitivity.\n\nEvery hour (and right after the browser wakes up), the extension refreshes data, draws charts in the popup, and updates the toolbar badge when something meaningful changes. All analytics run on your device. There is no Keyword Watch server.\n\nNotes:\n• Baidu Index requires you to be logged in to index.baidu.com in the same browser.\n• Google Trends does not require login.\n• Failed fetches are shown as failures and are never treated as a decline.\n• Baidu Index and Google Trends values are never merged or compared against each other.\n\nPermissions are limited to local storage, alarms, cookie presence checks for Baidu login, and host access to the two data sources.",
+      "searchTerms": [
+        "keyword trends",
+        "baidu index",
+        "google trends",
+        "search interest",
+        "trend alert"
+      ]
+    },
+    "zh_CN": {
+      "shortDescription": "订阅关键词，本地追踪百度指数与 Google Trends 趋势，热度显著变化时通过角标提醒。",
+      "detailedDescription": "Keyword Watch 关键词趋势监测帮你持续关注关心的搜索热度。\n\n最多 5 个订阅、每个订阅最多 5 个关键词；可分别启用百度指数 / Google Trends 并选择地区。提供智能监测、快速升温、持续上升、趋势反转、异常下降、剧烈波动与自定义规则等告警模板，并支持高 / 标准 / 低三档灵敏度。\n\n扩展每小时自动检查（浏览器恢复后会立即补做），在弹窗中展示趋势图，并在出现显著变化时用工具栏角标提醒。配置、历史数据与告警算法全部在本地运行，不依赖 Keyword Watch 自有服务器。\n\n说明：\n• 百度指数需要你在同一浏览器已登录 index.baidu.com。\n• Google Trends 无需登录。\n• 获取失败只会显示失败状态，绝不会被算作趋势下降。\n• 不会合并或比较百度与 Google 的数值。\n\n权限仅包括本地存储、定时任务、用于感知百度登录状态的 Cookie 存在性检查，以及对上述两个数据源的主机访问。",
+      "searchTerms": [
+        "关键词趋势",
+        "百度指数",
+        "Google Trends",
+        "搜索热度",
+        "趋势监测"
+      ]
+    },
+    "zh_TW": {
+      "shortDescription": "訂閱關鍵詞，本地追蹤百度指數與 Google Trends 趨勢，熱度顯著變化時透過角標提醒。",
+      "detailedDescription": "Keyword Watch 關鍵詞趨勢監測幫你持續關注關心的搜尋熱度。\n\n最多 5 個訂閱、每個訂閱最多 5 個關鍵詞；可分別啟用百度指數 / Google Trends 並選擇地區。提供智慧監測、快速升溫、持續上升、趨勢反轉、異常下降、劇烈波動與自訂規則等警示範本，並支援高 / 標準 / 低三檔靈敏度。\n\n擴充功能每小時自動檢查（瀏覽器恢復後會立即補做），在彈窗中展示趨勢圖，並在出現顯著變化時用工具列角標提醒。設定、歷史資料與告警演算法全部在本地執行，不依賴 Keyword Watch 自有伺服器。\n\n說明：\n• 百度指數需要你在同一瀏覽器已登入 index.baidu.com。\n• Google Trends 無需登入。\n• 取得失敗只會顯示失敗狀態，絕不會被算作趨勢下降。\n• 不會合併或比較百度與 Google 的數值。\n\n權限僅包括本地儲存、定時工作、用於感知百度登入狀態的 Cookie 存在性檢查，以及對上述兩個資料來源的主機存取。",
+      "searchTerms": [
+        "關鍵詞趨勢",
+        "百度指數",
+        "Google Trends",
+        "搜尋熱度",
+        "趨勢監測"
+      ]
+    }
+  },
+  "release": {
+    "changes": [
+      "Initial Chrome Web Store release of Keyword Watch 1.0.0."
+    ],
+    "reviewerTestSteps": [
+      "Install the extension and open the popup — a default subscription should appear.",
+      "Open Options, create or edit a subscription with 1–2 keywords; enable Google Trends (no login required).",
+      "Click refresh in the popup; charts should populate or show an explicit failure state (never a silent decline).",
+      "For Baidu Index: log in to https://index.baidu.com/ in the same browser profile, return to the popup, and refresh — Baidu series should load when the account has Index access.",
+      "Confirm the toolbar badge updates when an unread alert exists, and clears after alerts are marked read.",
+      "Uninstall or clear extension storage to verify local data removal."
+    ],
+    "reviewNotes": "No remote code. No content scripts. cookies permission is only used to detect Baidu BDUSS presence for login recovery; values are not stored. Host permissions are limited to index.baidu.com and trends.google.com. Analytics and alerting run entirely in the extension package."
+  }
+}

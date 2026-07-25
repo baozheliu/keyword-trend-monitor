@@ -1,0 +1,58 @@
+{
+  "name": "keyword-watch",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Keyword Watch — a Manifest V3 extension that tracks Baidu Index and Google Trends for subscribed keywords, runs all trend-alert analytics locally, and signals significant changes via the toolbar badge.",
+  "license": "MIT",
+  "author": "baozheliu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baozheliu/keyword-trend-monitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baozheliu/keyword-trend-monitor/issues"
+  },
+  "homepage": "https://github.com/baozheliu/keyword-trend-monitor#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "keywords": [
+    "browser-extension",
+    "chrome-extension",
+    "manifest-v3",
+    "baidu-index",
+    "google-trends",
+    "time-series",
+    "anomaly-detection"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:chrome": "EXTENSION_TARGET=chrome vite build",
+    "build:edge": "EXTENSION_TARGET=edge vite build",
+    "locales": "node scripts/generate-locales.mjs",
+    "validate:manifest": "node scripts/validate-manifest.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/unit tests/backtest",
+    "test:unit": "vitest run tests/unit",
+    "test:backtest": "vitest run tests/backtest --disable-console-intercept",
+    "test:e2e": "npm run build && vitest run tests/e2e",
+    "check": "npm run validate:manifest && npm run typecheck && npm run test && npm run build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "simple-statistics": "^7.9.3",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.4.0",
+    "@types/chrome": "^0.2.2",
+    "@types/node": "^26.1.1",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "puppeteer-core": "^25.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}

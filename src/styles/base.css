@@ -1,0 +1,106 @@
+/* Keyword Watch — base tokens & reset */
+
+@property --glass-angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 115deg;
+}
+
+:root {
+  color-scheme: light dark;
+  font-family: "SF Pro Text", Inter, ui-sans-serif, system-ui, -apple-system,
+    "PingFang SC", "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  --brand-a: #0a84ff;
+  --brand-b: #bf5af2;
+  --brand-gradient: linear-gradient(135deg, var(--brand-a), var(--brand-b));
+  /* Solid control color, matching the macOS switch/accent blue. */
+  --control-accent: #007aff;
+  --control-accent-press: #0071e3;
+
+  --accent-rise: #0a84ff;
+  --accent-amber: #ff9f0a;
+  --accent-fail: #ff453a;
+
+  --text: #1a2130;
+  --text-secondary: rgba(26, 33, 48, 0.78);
+  --text-tertiary: rgba(26, 33, 48, 0.55);
+
+  --glass-fill: rgba(255, 255, 255, 0.16);
+  --glass-fill-strong: rgba(255, 255, 255, 0.34);
+  --glass-ring-light: rgba(255, 255, 255, 0.95);
+  --glass-ring-dark: rgba(120, 132, 165, 0.35);
+  --glass-shadow: 0 18px 40px -18px rgba(30, 45, 90, 0.35);
+  --sheen-opacity: 0.5;
+  --glow-opacity: 0.5;
+
+  --scene-bg:
+    radial-gradient(120% 60% at 50% -12%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 60%),
+    radial-gradient(80% 50% at 12% 8%, rgba(10, 132, 255, 0.16), transparent 65%),
+    radial-gradient(70% 45% at 88% 14%, rgba(191, 90, 242, 0.14), transparent 60%),
+    radial-gradient(60% 45% at 50% 105%, rgba(10, 132, 255, 0.10), transparent 70%),
+    linear-gradient(180deg, #eef2fb 0%, #e7ebf6 55%, #e9e9f4 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f0f2f8;
+    --text-secondary: rgba(240, 242, 248, 0.78);
+    --text-tertiary: rgba(240, 242, 248, 0.55);
+
+    --control-accent: #0a84ff;
+    --control-accent-press: #0974df;
+
+    --glass-fill: rgba(22, 26, 40, 0.38);
+    --glass-fill-strong: rgba(28, 33, 50, 0.55);
+    --glass-ring-light: rgba(255, 255, 255, 0.32);
+    --glass-ring-dark: rgba(10, 12, 22, 0.55);
+    --glass-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.65);
+    --sheen-opacity: 0.22;
+    --glow-opacity: 0.25;
+
+    --scene-bg:
+      radial-gradient(120% 60% at 50% -12%, rgba(120, 150, 255, 0.14), transparent 60%),
+      radial-gradient(80% 50% at 12% 8%, rgba(10, 132, 255, 0.12), transparent 65%),
+      radial-gradient(70% 45% at 88% 14%, rgba(191, 90, 242, 0.10), transparent 60%),
+      linear-gradient(180deg, #10131d 0%, #0d101a 60%, #0e0f18 100%);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--scene-bg);
+  background-attachment: fixed;
+}
+
+button, input, select, textarea { font: inherit; color: inherit; }
+button { border: 0; background: none; padding: 0; cursor: pointer; }
+
+h1, h2, h3, p { margin: 0; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--text) 22%, transparent);
+  border-radius: 99px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--text) 35%, transparent);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand-a) 70%, transparent);
+  outline-offset: 2px;
+  border-radius: 10px;
+}

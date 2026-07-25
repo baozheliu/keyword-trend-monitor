@@ -1,0 +1,947 @@
+{
+  "extName": {
+    "message": "Keyword Watch"
+  },
+  "extDescription": {
+    "message": "Subscribe to keywords and track Baidu Index and Google Trends locally. A badge alerts you when search interest changes significantly."
+  },
+  "requestFailed": {
+    "message": "Request failed"
+  },
+  "letterFallback": {
+    "message": "K"
+  },
+  "unnamedSubscription": {
+    "message": "Untitled subscription"
+  },
+  "defaultSubName": {
+    "message": "COVID-19 trend watch"
+  },
+  "errMaxSubscriptions": {
+    "message": "You can create at most $1$ subscriptions",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNeedKeyword": {
+    "message": "Add at least 1 keyword"
+  },
+  "errMaxKeywords": {
+    "message": "Each subscription can have at most $1$ keywords",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNeedSource": {
+    "message": "Enable at least one data source"
+  },
+  "errInvalidImage": {
+    "message": "Invalid image"
+  },
+  "errImageTooLarge": {
+    "message": "Image is too large. Please choose a smaller one."
+  },
+  "sourceBaidu": {
+    "message": "Baidu Index"
+  },
+  "sourceGoogle": {
+    "message": "Google Trends"
+  },
+  "sourceNone": {
+    "message": "No source enabled"
+  },
+  "sourceFetchFailed": {
+    "message": "$1$ fetch failed",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sourceFetchFailedWithDetail": {
+    "message": "$1$ fetch failed: $2$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "baiduNotLoggedIn": {
+    "message": "Not signed in to Baidu"
+  },
+  "alertVolatility": {
+    "message": "$1$: related keywords show clearly higher search-interest volatility",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "alertRise": {
+    "message": "$1$: related keywords show a significant recent rise in search interest",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "alertDrop": {
+    "message": "$1$: related keywords show a clear recent drop in search interest",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduAntiBot": {
+    "message": "Baidu Index returned a non-data page (possible security check)"
+  },
+  "baiduRateLimited": {
+    "message": "Baidu Index is temporarily rate-limiting access. Will retry automatically."
+  },
+  "baiduRequestFailed": {
+    "message": "Baidu Index request failed: $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduAuth": {
+    "message": "Not signed in to Baidu, or no Baidu Index access"
+  },
+  "baiduParse": {
+    "message": "Baidu Index response format changed"
+  },
+  "baiduKeyFailed": {
+    "message": "Failed to obtain Baidu Index decryption key"
+  },
+  "baiduKeyRequestFailed": {
+    "message": "Baidu Index key request failed: $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduDecryptFailed": {
+    "message": "Baidu Index decryption failed"
+  },
+  "googleRateLimited": {
+    "message": "Google Trends is rate-limiting access. Will retry automatically."
+  },
+  "googleParse": {
+    "message": "Google Trends response format changed"
+  },
+  "googleRequestFailed": {
+    "message": "Google Trends request failed: $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "googleTimelineParse": {
+    "message": "Google Trends timeline format changed"
+  },
+  "googleDataRequestFailed": {
+    "message": "Google Trends data request failed: $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "range7d": {
+    "message": "7d"
+  },
+  "range30d": {
+    "message": "30d"
+  },
+  "range90d": {
+    "message": "90d"
+  },
+  "range1y": {
+    "message": "1y"
+  },
+  "noAlert": {
+    "message": "No trend alerts yet"
+  },
+  "justNow": {
+    "message": "just now"
+  },
+  "hoursAgo": {
+    "message": "$1$h ago",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "daysAgo": {
+    "message": "$1$d ago",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "neverChecked": {
+    "message": "Not checked yet"
+  },
+  "lastCheckToday": {
+    "message": "Checked $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "lastCheckDate": {
+    "message": "Checked $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refreshManual": {
+    "message": "Refresh now"
+  },
+  "manageSubscriptions": {
+    "message": "Manage subscriptions"
+  },
+  "loading": {
+    "message": "Loading…"
+  },
+  "baiduLoginBanner": {
+    "message": "Sign in to Baidu to fetch Baidu Index. Data updates automatically after login."
+  },
+  "goLogin": {
+    "message": "Sign in"
+  },
+  "emptyTitle": {
+    "message": "No subscriptions yet"
+  },
+  "emptySub": {
+    "message": "Create a keyword subscription to start tracking search interest."
+  },
+  "createSubscription": {
+    "message": "Create subscription"
+  },
+  "noSourceEnabled": {
+    "message": "No data source enabled"
+  },
+  "waitingFirstData": {
+    "message": "Waiting for first data"
+  },
+  "dataUntil": {
+    "message": "Data through $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "failHintLogin": {
+    "message": "Will resume automatically after you sign in to Baidu"
+  },
+  "failHintRateLimited": {
+    "message": "Access was a bit frequent. Will retry on the next check."
+  },
+  "failHintParse": {
+    "message": "The website layout changed. Waiting for an extension update."
+  },
+  "failHintNetwork": {
+    "message": "Network is temporarily unavailable. Will retry on the next check."
+  },
+  "learning": {
+    "message": "Learning the trend. Smart alerts start after more data accumulates."
+  },
+  "noData": {
+    "message": "No data yet"
+  },
+  "chartAria": {
+    "message": "$1$ trend chart",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduFetchFailedShort": {
+    "message": "Baidu Index fetch failed"
+  },
+  "googleFetchFailedShort": {
+    "message": "Google Trends fetch failed"
+  },
+  "optionsTitle": {
+    "message": "Keyword Watch · Subscriptions"
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "mySubscriptions": {
+    "message": "My subscriptions"
+  },
+  "newSubscription": {
+    "message": "New subscription"
+  },
+  "editSubscription": {
+    "message": "Edit subscription"
+  },
+  "atLimit": {
+    "message": "Limit reached ($1$ subscriptions).",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "emptyListHint": {
+    "message": "No subscriptions yet. Click “New subscription” to track keywords you care about."
+  },
+  "listSep": {
+    "message": ", "
+  },
+  "metaLine": {
+    "message": "$1$ · $2$ · $3$ sensitivity",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": "$3"
+      }
+    }
+  },
+  "disable": {
+    "message": "Disable"
+  },
+  "enable": {
+    "message": "Enable"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "confirmDelete": {
+    "message": "Confirm delete?"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "saving": {
+    "message": "Saving…"
+  },
+  "keywordsLabel": {
+    "message": "Which keywords do you want to watch? (up to $1$)",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "removeKeyword": {
+    "message": "Remove $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "keywordsPlaceholder": {
+    "message": "e.g. electric vehicles, BYD"
+  },
+  "add": {
+    "message": "Add"
+  },
+  "keywordsHint": {
+    "message": "You can paste multiple words separated by commas or spaces. Other settings have sensible defaults — just save."
+  },
+  "nameIconLabel": {
+    "message": "Name and icon (optional)"
+  },
+  "changeIcon": {
+    "message": "Change icon"
+  },
+  "clickChangeIcon": {
+    "message": "Click to change icon"
+  },
+  "namePlaceholder": {
+    "message": "Leave blank to use the first keyword"
+  },
+  "useInitial": {
+    "message": "Use initial letter"
+  },
+  "uploadSquare": {
+    "message": "Upload square image"
+  },
+  "dataSources": {
+    "message": "Data sources"
+  },
+  "baiduNeedsLogin": {
+    "message": "Requires a Baidu account sign-in"
+  },
+  "googleNoLogin": {
+    "message": "No sign-in required"
+  },
+  "alertTemplate": {
+    "message": "Alert template"
+  },
+  "templateSmart": {
+    "message": "Smart monitor"
+  },
+  "templateSmartDesc": {
+    "message": "Combines multiple change signals"
+  },
+  "templateRapidRise": {
+    "message": "Rapid rise"
+  },
+  "templateRapidRiseDesc": {
+    "message": "Sudden short-term increase"
+  },
+  "templateSustainedRise": {
+    "message": "Sustained rise"
+  },
+  "templateSustainedRiseDesc": {
+    "message": "Rising for a stretch of days"
+  },
+  "templateTrendReversal": {
+    "message": "Trend reversal"
+  },
+  "templateTrendReversalDesc": {
+    "message": "Turns up from flat or declining"
+  },
+  "templateAbnormalDrop": {
+    "message": "Abnormal drop"
+  },
+  "templateAbnormalDropDesc": {
+    "message": "Clear drop in search interest"
+  },
+  "templateVolatility": {
+    "message": "High volatility"
+  },
+  "templateVolatilityDesc": {
+    "message": "Volatility well above usual levels"
+  },
+  "templateCustom": {
+    "message": "Custom rules"
+  },
+  "templateCustomDesc": {
+    "message": "Configure direction, window, magnitude, and streak days"
+  },
+  "direction": {
+    "message": "Direction"
+  },
+  "directionUp": {
+    "message": "Up"
+  },
+  "directionDown": {
+    "message": "Down"
+  },
+  "windowDays": {
+    "message": "Window (days)"
+  },
+  "minChangePct": {
+    "message": "Minimum change (%)"
+  },
+  "streakDays": {
+    "message": "Streak days"
+  },
+  "moreOptions": {
+    "message": "More options (region, sensitivity)"
+  },
+  "baiduRegion": {
+    "message": "Baidu Index region"
+  },
+  "googleRegion": {
+    "message": "Google Trends region"
+  },
+  "sensitivity": {
+    "message": "Sensitivity"
+  },
+  "sensitivityHigh": {
+    "message": "High"
+  },
+  "sensitivityStandard": {
+    "message": "Standard"
+  },
+  "sensitivityLow": {
+    "message": "Low"
+  },
+  "advancedHint": {
+    "message": "Higher sensitivity alerts earlier and may fire more often. Leave region blank for nationwide / worldwide."
+  },
+  "groupDefault": {
+    "message": "Default"
+  },
+  "groupNationwide": {
+    "message": "Nationwide"
+  },
+  "groupProvince": {
+    "message": "Province"
+  },
+  "groupCity": {
+    "message": "City"
+  },
+  "groupCountry": {
+    "message": "Country / region"
+  },
+  "baiduDefaultNationwide": {
+    "message": "Default (nationwide)"
+  },
+  "baiduNationwide": {
+    "message": "Nationwide"
+  },
+  "googleDefaultWorldwide": {
+    "message": "Default (worldwide)"
+  },
+  "googleWorldwide": {
+    "message": "Worldwide"
+  },
+  "baiduRegion901": {
+    "message": "Shandong"
+  },
+  "baiduRegion902": {
+    "message": "Guizhou"
+  },
+  "baiduRegion903": {
+    "message": "Jiangxi"
+  },
+  "baiduRegion904": {
+    "message": "Chongqing"
+  },
+  "baiduRegion905": {
+    "message": "Inner Mongolia"
+  },
+  "baiduRegion906": {
+    "message": "Hubei"
+  },
+  "baiduRegion907": {
+    "message": "Liaoning"
+  },
+  "baiduRegion908": {
+    "message": "Hunan"
+  },
+  "baiduRegion909": {
+    "message": "Fujian"
+  },
+  "baiduRegion910": {
+    "message": "Shanghai"
+  },
+  "baiduRegion911": {
+    "message": "Beijing"
+  },
+  "baiduRegion912": {
+    "message": "Guangxi"
+  },
+  "baiduRegion913": {
+    "message": "Guangdong"
+  },
+  "baiduRegion914": {
+    "message": "Sichuan"
+  },
+  "baiduRegion915": {
+    "message": "Yunnan"
+  },
+  "baiduRegion916": {
+    "message": "Jiangsu"
+  },
+  "baiduRegion917": {
+    "message": "Zhejiang"
+  },
+  "baiduRegion918": {
+    "message": "Qinghai"
+  },
+  "baiduRegion919": {
+    "message": "Ningxia"
+  },
+  "baiduRegion920": {
+    "message": "Hebei"
+  },
+  "baiduRegion921": {
+    "message": "Heilongjiang"
+  },
+  "baiduRegion922": {
+    "message": "Jilin"
+  },
+  "baiduRegion923": {
+    "message": "Tianjin"
+  },
+  "baiduRegion924": {
+    "message": "Shaanxi"
+  },
+  "baiduRegion925": {
+    "message": "Gansu"
+  },
+  "baiduRegion926": {
+    "message": "Xinjiang"
+  },
+  "baiduRegion927": {
+    "message": "Henan"
+  },
+  "baiduRegion928": {
+    "message": "Anhui"
+  },
+  "baiduRegion929": {
+    "message": "Shanxi"
+  },
+  "baiduRegion930": {
+    "message": "Hainan"
+  },
+  "baiduRegion931": {
+    "message": "Taiwan"
+  },
+  "baiduRegion932": {
+    "message": "Tibet"
+  },
+  "baiduRegion933": {
+    "message": "Hong Kong"
+  },
+  "baiduRegion934": {
+    "message": "Macao"
+  },
+  "baiduRegion95": {
+    "message": "Guangzhou"
+  },
+  "baiduRegion94": {
+    "message": "Shenzhen"
+  },
+  "baiduRegion133": {
+    "message": "Dongguan"
+  },
+  "baiduRegion196": {
+    "message": "Foshan"
+  },
+  "baiduRegion200": {
+    "message": "Zhuhai"
+  },
+  "baiduRegion168": {
+    "message": "Zhengzhou"
+  },
+  "baiduRegion378": {
+    "message": "Luoyang"
+  },
+  "baiduRegion97": {
+    "message": "Chengdu"
+  },
+  "baiduRegion98": {
+    "message": "Mianyang"
+  },
+  "baiduRegion125": {
+    "message": "Nanjing"
+  },
+  "baiduRegion126": {
+    "message": "Suzhou"
+  },
+  "baiduRegion127": {
+    "message": "Wuxi"
+  },
+  "baiduRegion161": {
+    "message": "Xuzhou"
+  },
+  "baiduRegion162": {
+    "message": "Changzhou"
+  },
+  "baiduRegion163": {
+    "message": "Nantong"
+  },
+  "baiduRegion28": {
+    "message": "Wuhan"
+  },
+  "baiduRegion35": {
+    "message": "Yichang"
+  },
+  "baiduRegion32": {
+    "message": "Xiangyang"
+  },
+  "baiduRegion138": {
+    "message": "Hangzhou"
+  },
+  "baiduRegion289": {
+    "message": "Ningbo"
+  },
+  "baiduRegion149": {
+    "message": "Wenzhou"
+  },
+  "baiduRegion303": {
+    "message": "Shaoxing"
+  },
+  "baiduRegion304": {
+    "message": "Jiaxing"
+  },
+  "baiduRegion50": {
+    "message": "Fuzhou"
+  },
+  "baiduRegion54": {
+    "message": "Xiamen"
+  },
+  "baiduRegion55": {
+    "message": "Quanzhou"
+  },
+  "baiduRegion152": {
+    "message": "Harbin"
+  },
+  "baiduRegion153": {
+    "message": "Daqing"
+  },
+  "baiduRegion1": {
+    "message": "Jinan"
+  },
+  "baiduRegion77": {
+    "message": "Qingdao"
+  },
+  "baiduRegion78": {
+    "message": "Yantai"
+  },
+  "baiduRegion80": {
+    "message": "Weifang"
+  },
+  "baiduRegion79": {
+    "message": "Linyi"
+  },
+  "baiduRegion165": {
+    "message": "Xi’an"
+  },
+  "baiduRegion277": {
+    "message": "Xianyang"
+  },
+  "baiduRegion141": {
+    "message": "Shijiazhuang"
+  },
+  "baiduRegion261": {
+    "message": "Tangshan"
+  },
+  "baiduRegion259": {
+    "message": "Baoding"
+  },
+  "baiduRegion150": {
+    "message": "Shenyang"
+  },
+  "baiduRegion29": {
+    "message": "Dalian"
+  },
+  "baiduRegion154": {
+    "message": "Changchun"
+  },
+  "baiduRegion117": {
+    "message": "Kunming"
+  },
+  "baiduRegion467": {
+    "message": "Urumqi"
+  },
+  "baiduRegion90": {
+    "message": "Nanning"
+  },
+  "baiduRegion91": {
+    "message": "Guilin"
+  },
+  "baiduRegion231": {
+    "message": "Taiyuan"
+  },
+  "baiduRegion43": {
+    "message": "Changsha"
+  },
+  "baiduRegion46": {
+    "message": "Zhuzhou"
+  },
+  "baiduRegion5": {
+    "message": "Nanchang"
+  },
+  "baiduRegion10": {
+    "message": "Ganzhou"
+  },
+  "baiduRegion189": {
+    "message": "Hefei"
+  },
+  "baiduRegion188": {
+    "message": "Wuhu"
+  },
+  "baiduRegion20": {
+    "message": "Hohhot"
+  },
+  "baiduRegion13": {
+    "message": "Baotou"
+  },
+  "baiduRegion166": {
+    "message": "Lanzhou"
+  },
+  "baiduRegion239": {
+    "message": "Haikou"
+  },
+  "baiduRegion243": {
+    "message": "Sanya"
+  },
+  "baiduRegion2": {
+    "message": "Guiyang"
+  },
+  "baiduRegion59": {
+    "message": "Zunyi"
+  },
+  "baiduRegion140": {
+    "message": "Yinchuan"
+  },
+  "baiduRegion139": {
+    "message": "Xining"
+  },
+  "baiduRegion466": {
+    "message": "Lhasa"
+  },
+  "googleRegionUS": {
+    "message": "United States"
+  },
+  "googleRegionCN": {
+    "message": "China"
+  },
+  "googleRegionJP": {
+    "message": "Japan"
+  },
+  "googleRegionKR": {
+    "message": "South Korea"
+  },
+  "googleRegionIN": {
+    "message": "India"
+  },
+  "googleRegionGB": {
+    "message": "United Kingdom"
+  },
+  "googleRegionDE": {
+    "message": "Germany"
+  },
+  "googleRegionFR": {
+    "message": "France"
+  },
+  "googleRegionIT": {
+    "message": "Italy"
+  },
+  "googleRegionES": {
+    "message": "Spain"
+  },
+  "googleRegionNL": {
+    "message": "Netherlands"
+  },
+  "googleRegionSE": {
+    "message": "Sweden"
+  },
+  "googleRegionCH": {
+    "message": "Switzerland"
+  },
+  "googleRegionRU": {
+    "message": "Russia"
+  },
+  "googleRegionCA": {
+    "message": "Canada"
+  },
+  "googleRegionMX": {
+    "message": "Mexico"
+  },
+  "googleRegionBR": {
+    "message": "Brazil"
+  },
+  "googleRegionAR": {
+    "message": "Argentina"
+  },
+  "googleRegionAU": {
+    "message": "Australia"
+  },
+  "googleRegionNZ": {
+    "message": "New Zealand"
+  },
+  "googleRegionSG": {
+    "message": "Singapore"
+  },
+  "googleRegionMY": {
+    "message": "Malaysia"
+  },
+  "googleRegionTH": {
+    "message": "Thailand"
+  },
+  "googleRegionVN": {
+    "message": "Vietnam"
+  },
+  "googleRegionID": {
+    "message": "Indonesia"
+  },
+  "googleRegionPH": {
+    "message": "Philippines"
+  },
+  "googleRegionTR": {
+    "message": "Turkey"
+  },
+  "googleRegionSA": {
+    "message": "Saudi Arabia"
+  },
+  "googleRegionAE": {
+    "message": "United Arab Emirates"
+  },
+  "googleRegionIL": {
+    "message": "Israel"
+  },
+  "googleRegionEG": {
+    "message": "Egypt"
+  },
+  "googleRegionZA": {
+    "message": "South Africa"
+  },
+  "googleRegionNG": {
+    "message": "Nigeria"
+  },
+  "googleRegionPL": {
+    "message": "Poland"
+  },
+  "googleRegionUA": {
+    "message": "Ukraine"
+  },
+  "googleRegionPT": {
+    "message": "Portugal"
+  },
+  "googleRegionGR": {
+    "message": "Greece"
+  },
+  "googleRegionNO": {
+    "message": "Norway"
+  },
+  "googleRegionDK": {
+    "message": "Denmark"
+  },
+  "googleRegionFI": {
+    "message": "Finland"
+  },
+  "googleRegionAT": {
+    "message": "Austria"
+  },
+  "googleRegionBE": {
+    "message": "Belgium"
+  },
+  "googleRegionIE": {
+    "message": "Ireland"
+  },
+  "googleRegionCZ": {
+    "message": "Czechia"
+  },
+  "googleRegionHK": {
+    "message": "Hong Kong"
+  },
+  "googleRegionTW": {
+    "message": "Taiwan"
+  },
+  "googleRegionMO": {
+    "message": "Macao"
+  }
+}

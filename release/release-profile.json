@@ -1,0 +1,67 @@
+{
+  "extension": {
+    "name": "Keyword Watch",
+    "repository": "..",
+    "version": "1.0.0",
+    "supportedLocales": ["en", "zh_CN", "zh_TW"],
+    "privacyPolicyUrl": "https://keyword-watch-privacy.pages.dev/",
+    "supportUrl": "https://github.com/baozheliu/keyword-trend-monitor/issues"
+  },
+  "commands": {
+    "test": "npm test",
+    "validateManifest": "npm run validate:manifest",
+    "buildChrome": "npm run build:chrome",
+    "buildEdge": "npm run build:edge"
+  },
+  "stores": {
+    "chrome": {
+      "itemId": "",
+      "publisherId": "",
+      "visibility": "public",
+      "autoPublishAfterApproval": true
+    },
+    "edge": {
+      "productId": "e874ce45-7ba6-4c12-9390-f43e2ebf165a",
+      "storeId": "0RDCKF8NZKFQ",
+      "visibility": "public",
+      "markets": ["all"],
+      "forbiddenVisibleTerms": ["chrome web store", "chrome://"]
+    }
+  },
+  "artifacts": {
+    "chromePackage": "release/keyword-watch-chrome-1.0.0-source.zip",
+    "edgePackage": "release/keyword-watch-edge-1.0.0-source.zip"
+  },
+  "assets": [
+    {
+      "path": "release/assets/icon-128.png",
+      "width": 128,
+      "height": 128,
+      "required": true
+    },
+    {
+      "path": "release/assets/screenshot-01-popup-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "required": true
+    },
+    {
+      "path": "release/assets/screenshot-02-options-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "required": true
+    },
+    {
+      "path": "release/assets/promo-440x280.png",
+      "width": 440,
+      "height": 280,
+      "required": true
+    },
+    {
+      "path": "release/assets/promo-1400x560.png",
+      "width": 1400,
+      "height": 560,
+      "required": false
+    }
+  ]
+}

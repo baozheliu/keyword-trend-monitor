@@ -1,0 +1,947 @@
+{
+  "extName": {
+    "message": "Keyword Watch 關鍵詞趨勢監測"
+  },
+  "extDescription": {
+    "message": "訂閱關鍵詞，本地追蹤百度指數與 Google Trends 趨勢，熱度顯著變化時透過角標提醒。"
+  },
+  "requestFailed": {
+    "message": "請求失敗"
+  },
+  "letterFallback": {
+    "message": "詞"
+  },
+  "unnamedSubscription": {
+    "message": "未命名訂閱"
+  },
+  "defaultSubName": {
+    "message": "新冠趨勢關注"
+  },
+  "errMaxSubscriptions": {
+    "message": "最多建立 $1$ 個訂閱",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNeedKeyword": {
+    "message": "請至少新增 1 個關鍵詞"
+  },
+  "errMaxKeywords": {
+    "message": "每個訂閱最多 $1$ 個關鍵詞",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNeedSource": {
+    "message": "請至少啟用一個資料來源"
+  },
+  "errInvalidImage": {
+    "message": "無效的圖片"
+  },
+  "errImageTooLarge": {
+    "message": "圖片過大，請選擇更小的圖片"
+  },
+  "sourceBaidu": {
+    "message": "百度指數"
+  },
+  "sourceGoogle": {
+    "message": "Google Trends"
+  },
+  "sourceNone": {
+    "message": "未啟用來源"
+  },
+  "sourceFetchFailed": {
+    "message": "$1$取得失敗",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sourceFetchFailedWithDetail": {
+    "message": "$1$取得失敗：$2$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "baiduNotLoggedIn": {
+    "message": "未登入百度帳號"
+  },
+  "alertVolatility": {
+    "message": "$1$：關聯關鍵詞搜尋熱度波動明顯加劇",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "alertRise": {
+    "message": "$1$：關聯關鍵詞近期搜尋熱度顯著上升",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "alertDrop": {
+    "message": "$1$：關聯關鍵詞近期搜尋熱度明顯下降",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduAntiBot": {
+    "message": "百度指數回傳了非資料頁面（疑似安全驗證）"
+  },
+  "baiduRateLimited": {
+    "message": "百度指數暫時限制存取，稍後自動重試"
+  },
+  "baiduRequestFailed": {
+    "message": "百度指數請求失敗：$1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduAuth": {
+    "message": "未登入百度或沒有百度指數權限"
+  },
+  "baiduParse": {
+    "message": "百度指數回應結構改變"
+  },
+  "baiduKeyFailed": {
+    "message": "百度指數金鑰取得失敗"
+  },
+  "baiduKeyRequestFailed": {
+    "message": "百度指數金鑰請求失敗：$1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduDecryptFailed": {
+    "message": "百度指數解密失敗"
+  },
+  "googleRateLimited": {
+    "message": "Google Trends 存取受限，稍後自動重試"
+  },
+  "googleParse": {
+    "message": "Google Trends 回應結構改變"
+  },
+  "googleRequestFailed": {
+    "message": "Google Trends 請求失敗：$1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "googleTimelineParse": {
+    "message": "Google Trends 時間線結構改變"
+  },
+  "googleDataRequestFailed": {
+    "message": "Google Trends 資料請求失敗：$1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "range7d": {
+    "message": "7天"
+  },
+  "range30d": {
+    "message": "30天"
+  },
+  "range90d": {
+    "message": "90天"
+  },
+  "range1y": {
+    "message": "1年"
+  },
+  "noAlert": {
+    "message": "暫無趨勢提醒"
+  },
+  "justNow": {
+    "message": "剛剛"
+  },
+  "hoursAgo": {
+    "message": "$1$小時前",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "daysAgo": {
+    "message": "$1$天前",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "neverChecked": {
+    "message": "尚未檢查"
+  },
+  "lastCheckToday": {
+    "message": "上次檢查 $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "lastCheckDate": {
+    "message": "上次檢查 $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refreshManual": {
+    "message": "手動重新整理"
+  },
+  "manageSubscriptions": {
+    "message": "管理訂閱"
+  },
+  "loading": {
+    "message": "載入中…"
+  },
+  "baiduLoginBanner": {
+    "message": "登入百度帳號後即可取得百度指數，登入後會自動更新。"
+  },
+  "goLogin": {
+    "message": "去登入"
+  },
+  "emptyTitle": {
+    "message": "還沒有訂閱"
+  },
+  "emptySub": {
+    "message": "建立一個關鍵詞訂閱，開始追蹤搜尋熱度。"
+  },
+  "createSubscription": {
+    "message": "建立訂閱"
+  },
+  "noSourceEnabled": {
+    "message": "未啟用資料來源"
+  },
+  "waitingFirstData": {
+    "message": "等待首次資料"
+  },
+  "dataUntil": {
+    "message": "資料至 $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "failHintLogin": {
+    "message": "登入百度帳號後會自動恢復"
+  },
+  "failHintRateLimited": {
+    "message": "存取有點頻繁，下次檢查時自動重試"
+  },
+  "failHintParse": {
+    "message": "網站頁面有變化，等待擴充功能更新"
+  },
+  "failHintNetwork": {
+    "message": "網路暫時無法使用，下次檢查時自動重試"
+  },
+  "learning": {
+    "message": "正在學習趨勢，累積更多資料後開始智慧提醒"
+  },
+  "noData": {
+    "message": "暫無資料"
+  },
+  "chartAria": {
+    "message": "$1$ 趨勢圖",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "baiduFetchFailedShort": {
+    "message": "百度指數取得失敗"
+  },
+  "googleFetchFailedShort": {
+    "message": "Google Trends 取得失敗"
+  },
+  "optionsTitle": {
+    "message": "Keyword Watch · 訂閱管理"
+  },
+  "saved": {
+    "message": "已儲存"
+  },
+  "mySubscriptions": {
+    "message": "我的訂閱"
+  },
+  "newSubscription": {
+    "message": "新建訂閱"
+  },
+  "editSubscription": {
+    "message": "編輯訂閱"
+  },
+  "atLimit": {
+    "message": "已達上限（$1$ 個訂閱）。",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "emptyListHint": {
+    "message": "還沒有訂閱。點「新建訂閱」，追蹤你關心的關鍵詞。"
+  },
+  "listSep": {
+    "message": "、"
+  },
+  "metaLine": {
+    "message": "$1$ · $2$ · $3$靈敏度",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": "$3"
+      }
+    }
+  },
+  "disable": {
+    "message": "停用"
+  },
+  "enable": {
+    "message": "啟用"
+  },
+  "edit": {
+    "message": "編輯"
+  },
+  "delete": {
+    "message": "刪除"
+  },
+  "confirmDelete": {
+    "message": "確認刪除？"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "save": {
+    "message": "儲存"
+  },
+  "saving": {
+    "message": "儲存中…"
+  },
+  "keywordsLabel": {
+    "message": "想關注哪些關鍵詞？（最多 $1$ 個）",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "removeKeyword": {
+    "message": "移除 $1$",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "keywordsPlaceholder": {
+    "message": "例如：新能源汽車，比亞迪"
+  },
+  "add": {
+    "message": "新增"
+  },
+  "keywordsHint": {
+    "message": "可以一次貼上多個詞，用逗號或空格分開。其餘設定都有建議預設值，直接儲存即可。"
+  },
+  "nameIconLabel": {
+    "message": "名稱與圖示（可不填）"
+  },
+  "changeIcon": {
+    "message": "更換圖示"
+  },
+  "clickChangeIcon": {
+    "message": "點擊更換圖示"
+  },
+  "namePlaceholder": {
+    "message": "不填則自動使用第一個關鍵詞"
+  },
+  "useInitial": {
+    "message": "用首字產生"
+  },
+  "uploadSquare": {
+    "message": "上傳方形圖片"
+  },
+  "dataSources": {
+    "message": "資料來源"
+  },
+  "baiduNeedsLogin": {
+    "message": "需要登入百度帳號"
+  },
+  "googleNoLogin": {
+    "message": "無需登入"
+  },
+  "alertTemplate": {
+    "message": "警示範本"
+  },
+  "templateSmart": {
+    "message": "智慧監測"
+  },
+  "templateSmartDesc": {
+    "message": "綜合多種變化訊號"
+  },
+  "templateRapidRise": {
+    "message": "快速升溫"
+  },
+  "templateRapidRiseDesc": {
+    "message": "短期突然上漲"
+  },
+  "templateSustainedRise": {
+    "message": "持續上升"
+  },
+  "templateSustainedRiseDesc": {
+    "message": "連續一段時間上漲"
+  },
+  "templateTrendReversal": {
+    "message": "趨勢反轉"
+  },
+  "templateTrendReversalDesc": {
+    "message": "從平穩或下降轉為上漲"
+  },
+  "templateAbnormalDrop": {
+    "message": "異常下降"
+  },
+  "templateAbnormalDropDesc": {
+    "message": "搜尋熱度明顯下降"
+  },
+  "templateVolatility": {
+    "message": "劇烈波動"
+  },
+  "templateVolatilityDesc": {
+    "message": "波動顯著高於通常水準"
+  },
+  "templateCustom": {
+    "message": "自訂規則"
+  },
+  "templateCustomDesc": {
+    "message": "設定方向、週期、幅度和連續天數"
+  },
+  "direction": {
+    "message": "方向"
+  },
+  "directionUp": {
+    "message": "上升"
+  },
+  "directionDown": {
+    "message": "下降"
+  },
+  "windowDays": {
+    "message": "觀察週期（天）"
+  },
+  "minChangePct": {
+    "message": "最低變化幅度（%）"
+  },
+  "streakDays": {
+    "message": "連續天數"
+  },
+  "moreOptions": {
+    "message": "更多選項（地區、靈敏度）"
+  },
+  "baiduRegion": {
+    "message": "百度指數地區"
+  },
+  "googleRegion": {
+    "message": "Google Trends 地區"
+  },
+  "sensitivity": {
+    "message": "靈敏度"
+  },
+  "sensitivityHigh": {
+    "message": "高"
+  },
+  "sensitivityStandard": {
+    "message": "標準"
+  },
+  "sensitivityLow": {
+    "message": "低"
+  },
+  "advancedHint": {
+    "message": "靈敏度越高，提醒越早，也可能更頻繁。地區不選時使用全國 / 全球。"
+  },
+  "groupDefault": {
+    "message": "預設"
+  },
+  "groupNationwide": {
+    "message": "全國"
+  },
+  "groupProvince": {
+    "message": "省份"
+  },
+  "groupCity": {
+    "message": "城市"
+  },
+  "groupCountry": {
+    "message": "國家/地區"
+  },
+  "baiduDefaultNationwide": {
+    "message": "預設（全國）"
+  },
+  "baiduNationwide": {
+    "message": "全國"
+  },
+  "googleDefaultWorldwide": {
+    "message": "預設（全球）"
+  },
+  "googleWorldwide": {
+    "message": "全球"
+  },
+  "baiduRegion901": {
+    "message": "山東"
+  },
+  "baiduRegion902": {
+    "message": "貴州"
+  },
+  "baiduRegion903": {
+    "message": "江西"
+  },
+  "baiduRegion904": {
+    "message": "重慶"
+  },
+  "baiduRegion905": {
+    "message": "內蒙古"
+  },
+  "baiduRegion906": {
+    "message": "湖北"
+  },
+  "baiduRegion907": {
+    "message": "遼寧"
+  },
+  "baiduRegion908": {
+    "message": "湖南"
+  },
+  "baiduRegion909": {
+    "message": "福建"
+  },
+  "baiduRegion910": {
+    "message": "上海"
+  },
+  "baiduRegion911": {
+    "message": "北京"
+  },
+  "baiduRegion912": {
+    "message": "廣西"
+  },
+  "baiduRegion913": {
+    "message": "廣東"
+  },
+  "baiduRegion914": {
+    "message": "四川"
+  },
+  "baiduRegion915": {
+    "message": "雲南"
+  },
+  "baiduRegion916": {
+    "message": "江蘇"
+  },
+  "baiduRegion917": {
+    "message": "浙江"
+  },
+  "baiduRegion918": {
+    "message": "青海"
+  },
+  "baiduRegion919": {
+    "message": "寧夏"
+  },
+  "baiduRegion920": {
+    "message": "河北"
+  },
+  "baiduRegion921": {
+    "message": "黑龍江"
+  },
+  "baiduRegion922": {
+    "message": "吉林"
+  },
+  "baiduRegion923": {
+    "message": "天津"
+  },
+  "baiduRegion924": {
+    "message": "陝西"
+  },
+  "baiduRegion925": {
+    "message": "甘肅"
+  },
+  "baiduRegion926": {
+    "message": "新疆"
+  },
+  "baiduRegion927": {
+    "message": "河南"
+  },
+  "baiduRegion928": {
+    "message": "安徽"
+  },
+  "baiduRegion929": {
+    "message": "山西"
+  },
+  "baiduRegion930": {
+    "message": "海南"
+  },
+  "baiduRegion931": {
+    "message": "台灣"
+  },
+  "baiduRegion932": {
+    "message": "西藏"
+  },
+  "baiduRegion933": {
+    "message": "香港"
+  },
+  "baiduRegion934": {
+    "message": "澳門"
+  },
+  "baiduRegion95": {
+    "message": "廣州"
+  },
+  "baiduRegion94": {
+    "message": "深圳"
+  },
+  "baiduRegion133": {
+    "message": "東莞"
+  },
+  "baiduRegion196": {
+    "message": "佛山"
+  },
+  "baiduRegion200": {
+    "message": "珠海"
+  },
+  "baiduRegion168": {
+    "message": "鄭州"
+  },
+  "baiduRegion378": {
+    "message": "洛陽"
+  },
+  "baiduRegion97": {
+    "message": "成都"
+  },
+  "baiduRegion98": {
+    "message": "綿陽"
+  },
+  "baiduRegion125": {
+    "message": "南京"
+  },
+  "baiduRegion126": {
+    "message": "蘇州"
+  },
+  "baiduRegion127": {
+    "message": "無錫"
+  },
+  "baiduRegion161": {
+    "message": "徐州"
+  },
+  "baiduRegion162": {
+    "message": "常州"
+  },
+  "baiduRegion163": {
+    "message": "南通"
+  },
+  "baiduRegion28": {
+    "message": "武漢"
+  },
+  "baiduRegion35": {
+    "message": "宜昌"
+  },
+  "baiduRegion32": {
+    "message": "襄陽"
+  },
+  "baiduRegion138": {
+    "message": "杭州"
+  },
+  "baiduRegion289": {
+    "message": "寧波"
+  },
+  "baiduRegion149": {
+    "message": "溫州"
+  },
+  "baiduRegion303": {
+    "message": "紹興"
+  },
+  "baiduRegion304": {
+    "message": "嘉興"
+  },
+  "baiduRegion50": {
+    "message": "福州"
+  },
+  "baiduRegion54": {
+    "message": "廈門"
+  },
+  "baiduRegion55": {
+    "message": "泉州"
+  },
+  "baiduRegion152": {
+    "message": "哈爾濱"
+  },
+  "baiduRegion153": {
+    "message": "大慶"
+  },
+  "baiduRegion1": {
+    "message": "濟南"
+  },
+  "baiduRegion77": {
+    "message": "青島"
+  },
+  "baiduRegion78": {
+    "message": "煙臺"
+  },
+  "baiduRegion80": {
+    "message": "濰坊"
+  },
+  "baiduRegion79": {
+    "message": "臨沂"
+  },
+  "baiduRegion165": {
+    "message": "西安"
+  },
+  "baiduRegion277": {
+    "message": "咸陽"
+  },
+  "baiduRegion141": {
+    "message": "石家莊"
+  },
+  "baiduRegion261": {
+    "message": "唐山"
+  },
+  "baiduRegion259": {
+    "message": "保定"
+  },
+  "baiduRegion150": {
+    "message": "瀋陽"
+  },
+  "baiduRegion29": {
+    "message": "大連"
+  },
+  "baiduRegion154": {
+    "message": "長春"
+  },
+  "baiduRegion117": {
+    "message": "昆明"
+  },
+  "baiduRegion467": {
+    "message": "烏魯木齊"
+  },
+  "baiduRegion90": {
+    "message": "南寧"
+  },
+  "baiduRegion91": {
+    "message": "桂林"
+  },
+  "baiduRegion231": {
+    "message": "太原"
+  },
+  "baiduRegion43": {
+    "message": "長沙"
+  },
+  "baiduRegion46": {
+    "message": "株洲"
+  },
+  "baiduRegion5": {
+    "message": "南昌"
+  },
+  "baiduRegion10": {
+    "message": "贛州"
+  },
+  "baiduRegion189": {
+    "message": "合肥"
+  },
+  "baiduRegion188": {
+    "message": "蕪湖"
+  },
+  "baiduRegion20": {
+    "message": "呼和浩特"
+  },
+  "baiduRegion13": {
+    "message": "包頭"
+  },
+  "baiduRegion166": {
+    "message": "蘭州"
+  },
+  "baiduRegion239": {
+    "message": "海口"
+  },
+  "baiduRegion243": {
+    "message": "三亞"
+  },
+  "baiduRegion2": {
+    "message": "貴陽"
+  },
+  "baiduRegion59": {
+    "message": "遵義"
+  },
+  "baiduRegion140": {
+    "message": "銀川"
+  },
+  "baiduRegion139": {
+    "message": "西寧"
+  },
+  "baiduRegion466": {
+    "message": "拉薩"
+  },
+  "googleRegionUS": {
+    "message": "美國"
+  },
+  "googleRegionCN": {
+    "message": "中國"
+  },
+  "googleRegionJP": {
+    "message": "日本"
+  },
+  "googleRegionKR": {
+    "message": "韓國"
+  },
+  "googleRegionIN": {
+    "message": "印度"
+  },
+  "googleRegionGB": {
+    "message": "英國"
+  },
+  "googleRegionDE": {
+    "message": "德國"
+  },
+  "googleRegionFR": {
+    "message": "法國"
+  },
+  "googleRegionIT": {
+    "message": "義大利"
+  },
+  "googleRegionES": {
+    "message": "西班牙"
+  },
+  "googleRegionNL": {
+    "message": "荷蘭"
+  },
+  "googleRegionSE": {
+    "message": "瑞典"
+  },
+  "googleRegionCH": {
+    "message": "瑞士"
+  },
+  "googleRegionRU": {
+    "message": "俄羅斯"
+  },
+  "googleRegionCA": {
+    "message": "加拿大"
+  },
+  "googleRegionMX": {
+    "message": "墨西哥"
+  },
+  "googleRegionBR": {
+    "message": "巴西"
+  },
+  "googleRegionAR": {
+    "message": "阿根廷"
+  },
+  "googleRegionAU": {
+    "message": "澳洲"
+  },
+  "googleRegionNZ": {
+    "message": "紐西蘭"
+  },
+  "googleRegionSG": {
+    "message": "新加坡"
+  },
+  "googleRegionMY": {
+    "message": "馬來西亞"
+  },
+  "googleRegionTH": {
+    "message": "泰國"
+  },
+  "googleRegionVN": {
+    "message": "越南"
+  },
+  "googleRegionID": {
+    "message": "印尼"
+  },
+  "googleRegionPH": {
+    "message": "菲律賓"
+  },
+  "googleRegionTR": {
+    "message": "土耳其"
+  },
+  "googleRegionSA": {
+    "message": "沙烏地阿拉伯"
+  },
+  "googleRegionAE": {
+    "message": "阿拉伯聯合大公國"
+  },
+  "googleRegionIL": {
+    "message": "以色列"
+  },
+  "googleRegionEG": {
+    "message": "埃及"
+  },
+  "googleRegionZA": {
+    "message": "南非"
+  },
+  "googleRegionNG": {
+    "message": "奈及利亞"
+  },
+  "googleRegionPL": {
+    "message": "波蘭"
+  },
+  "googleRegionUA": {
+    "message": "烏克蘭"
+  },
+  "googleRegionPT": {
+    "message": "葡萄牙"
+  },
+  "googleRegionGR": {
+    "message": "希臘"
+  },
+  "googleRegionNO": {
+    "message": "挪威"
+  },
+  "googleRegionDK": {
+    "message": "丹麥"
+  },
+  "googleRegionFI": {
+    "message": "芬蘭"
+  },
+  "googleRegionAT": {
+    "message": "奧地利"
+  },
+  "googleRegionBE": {
+    "message": "比利時"
+  },
+  "googleRegionIE": {
+    "message": "愛爾蘭"
+  },
+  "googleRegionCZ": {
+    "message": "捷克"
+  },
+  "googleRegionHK": {
+    "message": "中國香港"
+  },
+  "googleRegionTW": {
+    "message": "台灣"
+  },
+  "googleRegionMO": {
+    "message": "中國澳門"
+  }
+}

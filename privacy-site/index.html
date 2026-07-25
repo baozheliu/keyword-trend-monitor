@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keyword Watch 隐私政策 / Privacy Policy</title>
+    <meta
+      name="description"
+      content="Keyword Watch browser extension privacy policy in Chinese and English."
+    >
+    <link rel="icon" href="./assets/icon128.png">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f7f8;
+        --paper: #ffffff;
+        --ink: #152028;
+        --muted: #52616f;
+        --rule: #d5dee6;
+        --accent: #1f6f78;
+        --accent-strong: #14555c;
+        --soft: #e8f4f5;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, sans-serif;
+        line-height: 1.68;
+      }
+
+      a { color: var(--accent-strong); }
+
+      .page {
+        width: min(100%, 980px);
+        margin: 0 auto;
+        padding: 40px 20px 64px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+
+      header img {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+        box-shadow: 0 10px 32px rgb(21 32 40 / 12%);
+      }
+
+      h1, h2, h3 {
+        line-height: 1.24;
+        margin: 0;
+      }
+
+      h1 { font-size: clamp(2rem, 4vw, 3rem); }
+
+      header p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 0 0 22px;
+      }
+
+      nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 8px 14px;
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        background: var(--paper);
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      main {
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        box-shadow: 0 14px 42px rgb(21 32 40 / 8%);
+        overflow: hidden;
+      }
+
+      section { padding: 36px; }
+      section + section { border-top: 1px solid var(--rule); }
+
+      .updated {
+        display: inline-flex;
+        margin: 14px 0 22px;
+        padding: 6px 12px;
+        border-radius: 8px;
+        background: var(--soft);
+        color: var(--accent-strong);
+        font-weight: 700;
+      }
+
+      h2 {
+        margin-top: 30px;
+        font-size: 1.35rem;
+      }
+
+      h2:first-child { margin-top: 0; }
+
+      p { margin: 14px 0 0; }
+
+      ul {
+        margin: 14px 0 0;
+        padding-left: 1.35rem;
+      }
+
+      li + li { margin-top: 8px; }
+
+      table {
+        width: 100%;
+        margin: 14px 0 0;
+        border-collapse: collapse;
+        font-size: 0.96rem;
+      }
+
+      th, td {
+        border: 1px solid var(--rule);
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th { background: #f7fafb; }
+
+      code {
+        padding: 0.12rem 0.32rem;
+        border-radius: 6px;
+        background: #f1f3f6;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", monospace;
+        font-size: 0.94em;
+      }
+
+      footer {
+        padding: 22px 36px;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        background: #fbfcfe;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 680px) {
+        .page { padding: 24px 14px 40px; }
+        header { grid-template-columns: 1fr; gap: 12px; }
+        header img { width: 60px; height: 60px; }
+        section, footer { padding: 24px 18px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <img src="./assets/icon128.png" alt="Keyword Watch icon" width="128" height="128">
+        <div>
+          <h1>Keyword Watch 隐私政策</h1>
+          <p>Privacy Policy for the Keyword Watch browser extension</p>
+        </div>
+      </header>
+
+      <nav aria-label="Language">
+        <a href="#zh">中文</a>
+        <a href="#en">English</a>
+      </nav>
+
+      <main>
+        <section id="zh" lang="zh-CN">
+          <h2>Keyword Watch 隐私政策</h2>
+          <p class="updated">最后更新：2026 年 7 月 19 日</p>
+
+          <p>
+            Keyword Watch（关键词趋势监测）是浏览器扩展，用于订阅关键词并监测百度指数与 Google Trends 的搜索热度变化。本政策说明扩展会处理哪些数据，以及如何使用这些数据。
+          </p>
+
+          <h2>摘要</h2>
+          <ul>
+            <li>订阅配置、趋势历史与告警均保存在您本机浏览器的 <code>chrome.storage.local</code> 中。</li>
+            <li>扩展不运营自有后端，也不会把您的数据上传给开发者。</li>
+            <li>为获取趋势数据，扩展会把您订阅的<strong>关键词</strong>（及所选地区）发送给百度指数和/或 Google Trends。</li>
+            <li>扩展不出售用户数据，不用于广告，也不会向无关第三方共享数据。</li>
+          </ul>
+
+          <h2>我们处理的数据</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>类别</th>
+                <th>内容</th>
+                <th>去向</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>用户内容</td>
+                <td>订阅名称、关键词、告警模板/灵敏度、可选自定义图标</td>
+                <td>本地存储；抓取时关键词与地区会发送给所选数据源</td>
+              </tr>
+              <tr>
+                <td>网站内容</td>
+                <td>百度指数 / Google Trends 返回的日度指数或趋势值</td>
+                <td>本地存储，用于图表与告警</td>
+              </tr>
+              <tr>
+                <td>身份验证信息</td>
+                <td><code>index.baidu.com</code> 上百度 <code>BDUSS</code> 会话 Cookie 是否存在</td>
+                <td>仅在内存中检测登录状态；<strong>不会保存或由扩展向外传输 Cookie 值</strong></td>
+              </tr>
+              <tr>
+                <td>设置</td>
+                <td>上次检查时间、未读告警状态等</td>
+                <td>本地存储</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            扩展<strong>不会</strong>收集：其他网站的浏览历史、您访问页面的正文、精确位置、通讯录、支付信息，或关于您如何使用扩展的分析/遥测数据。
+          </p>
+
+          <h2>权限说明</h2>
+          <ul>
+            <li><code>storage</code>：在本机保存订阅、序列历史、告警与界面状态。</li>
+            <li><code>alarms</code>：按小时执行自动检查。</li>
+            <li><code>cookies</code>：通过观察 <code>BDUSS</code> Cookie 是否存在/出现，判断您是否已登录百度指数，以便登录后立即恢复抓取。Cookie 值不会被扩展持久化。</li>
+            <li>主机权限 <code>https://index.baidu.com/*</code> 与 <code>https://trends.google.com/*</code>：仅为您订阅的关键词向这两个数据源请求趋势数据。</li>
+          </ul>
+          <p>扩展没有内容脚本，不会向任意网站注入代码。</p>
+
+          <h2>网络请求</h2>
+          <p>在定时检查、浏览器恢复后的补检、检测到百度登录，或您手动刷新时，扩展可能请求：</p>
+          <ol>
+            <li><strong>百度指数</strong>（<code>index.baidu.com</code>）：使用浏览器已有登录会话（<code>credentials: include</code>），请求中包含关键词与地区。</li>
+            <li><strong>Google Trends</strong>（<code>trends.google.com</code>）：公开网页接口，请求中包含关键词与地区。</li>
+          </ol>
+          <p>上述服务按其自身隐私政策处理请求。Keyword Watch 无法控制百度或 Google 对请求日志的保留。</p>
+
+          <h2>远程代码</h2>
+          <p>全部可执行逻辑均包含在扩展安装包内。扩展<strong>不会</strong>下载或执行远程 JavaScript 或 Wasm。</p>
+
+          <h2>保留与删除</h2>
+          <ul>
+            <li>本地数据会保留到您删除订阅（会清除对应序列、告警及相关状态）、清除扩展存储，或卸载扩展为止。</li>
+            <li>卸载扩展后，浏览器会移除该扩展的本地存储。</li>
+          </ul>
+
+          <h2>儿童隐私</h2>
+          <p>本扩展不面向 13 岁以下儿童。请勿用其提交儿童的个人信息。</p>
+
+          <h2>政策变更</h2>
+          <p>若数据处理方式发生重大变化，将更新本页的“最后更新”日期。继续使用即表示接受更新后的政策。</p>
+
+          <h2>联系方式</h2>
+          <p>如对本政策有疑问，请通过扩展商店商品页上的支持渠道，或项目仓库 Issues 联系开发者：<a href="https://github.com/baozheliu/keyword-trend-monitor/issues">https://github.com/baozheliu/keyword-trend-monitor/issues</a></p>
+        </section>
+
+        <section id="en" lang="en">
+          <h2>Keyword Watch Privacy Policy</h2>
+          <p class="updated">Last updated: July 19, 2026</p>
+
+          <p>
+            Keyword Watch is a browser extension that helps you subscribe to keywords and monitor search-interest trends from Baidu Index and Google Trends. This policy explains what data the extension handles and how that data is used.
+          </p>
+
+          <h2>Summary</h2>
+          <ul>
+            <li>All subscription settings, trend history, and alerts are stored <strong>locally</strong> in your browser (<code>chrome.storage.local</code>).</li>
+            <li>The extension does <strong>not</strong> operate a backend server and does <strong>not</strong> upload your data to the developer.</li>
+            <li>To fetch trend data, the extension sends your subscribed <strong>keywords</strong> (and selected region settings) to Baidu Index and/or Google Trends.</li>
+            <li>The extension does <strong>not</strong> sell user data, does <strong>not</strong> use it for advertising, and does <strong>not</strong> share it with unrelated third parties.</li>
+          </ul>
+
+          <h2>Data the extension handles</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>What</th>
+                <th>Where it goes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>User content</td>
+                <td>Subscription names, keywords, alert template/sensitivity choices, optional custom icons</td>
+                <td>Stored locally; keywords and region are also sent to the selected data source when fetching</td>
+              </tr>
+              <tr>
+                <td>Website content</td>
+                <td>Daily index/trend values returned by Baidu Index / Google Trends</td>
+                <td>Stored locally for charts and alerts</td>
+              </tr>
+              <tr>
+                <td>Authentication information</td>
+                <td>Presence of Baidu’s <code>BDUSS</code> session cookie on <code>index.baidu.com</code></td>
+                <td>Checked in memory only to detect login; <strong>value is never saved or transmitted by the extension</strong></td>
+              </tr>
+              <tr>
+                <td>Settings</td>
+                <td>Last-check timestamps, unread alert state</td>
+                <td>Stored locally</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            The extension does <strong>not</strong> collect browsing history of other sites, page content from sites you visit, precise location, contacts, payment information, or analytics/telemetry about how you use the extension.
+          </p>
+
+          <h2>Permissions</h2>
+          <ul>
+            <li><code>storage</code> — Save subscriptions, series history, alerts, and UI state on this device.</li>
+            <li><code>alarms</code> — Run the hourly refresh schedule.</li>
+            <li><code>cookies</code> — Detect whether you are logged in to Baidu Index by observing whether the <code>BDUSS</code> cookie exists or changes. Cookie values are not persisted by the extension.</li>
+            <li>Host access to <code>https://index.baidu.com/*</code> and <code>https://trends.google.com/*</code> — Request trend data for your subscribed keywords from those two sources only.</li>
+          </ul>
+          <p>There is no content script. The extension does not inject code into arbitrary websites.</p>
+
+          <h2>Network requests</h2>
+          <p>When a check runs (hourly, on browser restart catch-up, after Baidu login is detected, or when you tap refresh), the extension may request data from:</p>
+          <ol>
+            <li><strong>Baidu Index</strong> (<code>index.baidu.com</code>) — using your existing browser login session (<code>credentials: include</code>). Your keywords and selected area are included in the request.</li>
+            <li><strong>Google Trends</strong> (<code>trends.google.com</code>) — public web endpoints; your keywords and selected geo are included in the request.</li>
+          </ol>
+          <p>Those services process requests under their own privacy policies. Keyword Watch does not control Baidu’s or Google’s retention of request logs.</p>
+
+          <h2>Remote code</h2>
+          <p>All executable logic ships inside the extension package. The extension does <strong>not</strong> download or execute remote JavaScript or Wasm.</p>
+
+          <h2>Retention and deletion</h2>
+          <ul>
+            <li>Local data remains until you delete a subscription (which removes its series, alerts, and related state), clear the extension’s storage, or uninstall the extension.</li>
+            <li>Uninstalling the extension removes its local storage from the browser.</li>
+          </ul>
+
+          <h2>Children’s privacy</h2>
+          <p>The extension is not directed at children under 13. Do not use it to submit personal information about children.</p>
+
+          <h2>Changes</h2>
+          <p>If this policy changes in a material way, the “Last updated” date above will be revised. Continued use after an update means you accept the revised policy.</p>
+
+          <h2>Contact</h2>
+          <p>For questions about this policy, use the support channel on the extension store listing or the project repository Issues: <a href="https://github.com/baozheliu/keyword-trend-monitor/issues">https://github.com/baozheliu/keyword-trend-monitor/issues</a></p>
+        </section>
+
+        <footer>
+          This page is provided for browser extension store review.
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

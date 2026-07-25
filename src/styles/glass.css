@@ -1,0 +1,315 @@
+/* Liquid Glass optical system — four layers:
+   1. true refraction: backdrop-filter url(#kw-lens) (SVG displacement),
+      falling back to plain blur+saturate where unsupported;
+   2. refracted edge ring: gradient stroke cut into a ring with a mask,
+      light side bright / shade side dark, angle slowly rotating;
+   3. lens curvature: top-lit / bottom-glow vertical gradient + inset shadows;
+   4. dynamic highlights: periodic sheen sweep + pointer-following glow. */
+
+.glass {
+  position: relative;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.28) 0%,
+      rgba(255, 255, 255, 0.06) 22%,
+      rgba(255, 255, 255, 0.02) 60%,
+      rgba(255, 255, 255, 0.12) 100%),
+    var(--glass-fill);
+  /* Fallback: clear glass, low blur / high saturation. */
+  -webkit-backdrop-filter: blur(10px) saturate(185%);
+  backdrop-filter: blur(10px) saturate(185%);
+  box-shadow:
+    var(--glass-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 12px 24px -18px rgba(255, 255, 255, 0.65),
+    inset 0 -14px 24px -20px rgba(90, 110, 160, 0.35);
+  isolation: isolate;
+}
+
+/* True refraction where SVG backdrop filters are supported. */
+@supports (backdrop-filter: url('#kw-lens')) {
+  .glass {
+    backdrop-filter: url('#kw-lens') blur(10px) saturate(185%);
+  }
+}
+
+.glass-card { border-radius: 20px; }
+
+/* Layer 2 — edge ring driven by the rotating light angle. */
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.2px;
+  background: linear-gradient(var(--glass-angle),
+    var(--glass-ring-light) 0%,
+    rgba(255, 255, 255, 0.35) 28%,
+    var(--glass-ring-dark) 62%,
+    rgba(255, 255, 255, 0.28) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: kw-ring-rotate 16s linear infinite;
+}
+
+@keyframes kw-ring-rotate {
+  from { --glass-angle: 115deg; }
+  to { --glass-angle: 475deg; }
+}
+
+/* Layer 4a — sheen sweep (stagger with .sheen-late / .sheen-later). */
+.glass > .kw-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glass > .kw-sheen::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: -80%;
+  width: 45%;
+  transform: rotate(16deg) translateX(0);
+  background: linear-gradient(100deg,
+    transparent 8%,
+    rgba(255, 255, 255, calc(0.32 * var(--sheen-opacity))) 46%,
+    rgba(255, 255, 255, calc(0.75 * var(--sheen-opacity))) 50%,
+    rgba(255, 255, 255, calc(0.32 * var(--sheen-opacity))) 54%,
+    transparent 92%);
+  animation: kw-sheen 11s ease-in-out infinite;
+}
+
+.sheen-late > .kw-sheen::after { animation-delay: 3.6s; }
+.sheen-later > .kw-sheen::after { animation-delay: 7.2s; }
+
+@keyframes kw-sheen {
+  0% { left: -80%; opacity: 0; }
+  6% { opacity: 1; }
+  22% { left: 130%; opacity: 0; }
+  100% { left: 130%; opacity: 0; }
+}
+
+/* Layer 4b — pointer-following glow (position set from JS via --mx/--my). */
+.glass > .kw-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.glass.is-hovered > .kw-glow { opacity: 1; }
+
+.glass > .kw-glow::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  left: var(--mx, 50%);
+  top: var(--my, 30%);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, calc(0.5 * var(--glow-opacity))) 0%,
+    rgba(255, 255, 255, calc(0.16 * var(--glow-opacity))) 38%,
+    transparent 70%);
+}
+
+/* Interactive cards float on hover, settle when pressed. */
+.glass-interactive {
+  transition: transform 0.28s cubic-bezier(0.32, 0.72, 0.35, 1.2), box-shadow 0.28s ease;
+}
+.glass-interactive:hover { transform: translateY(-2px); }
+.glass-interactive:active { transform: translateY(0) scale(0.992); }
+
+/* ------------------------------------------------------------- controls */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--glass-fill-strong);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 6px -3px rgba(20, 30, 60, 0.4);
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0.35, 1.3), filter 0.2s ease;
+}
+.btn:hover { filter: brightness(1.06); }
+.btn:active { transform: scale(0.96); }
+
+/* Solid macOS-style accent, no gradients on controls. */
+.btn-primary {
+  color: #fff;
+  background: var(--control-accent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 6px 16px -8px rgba(0, 122, 255, 0.75);
+}
+.btn-primary:hover { filter: none; background: var(--control-accent-press); }
+
+.btn-sm {
+  min-height: 26px;
+  padding: 0 12px;
+  font-size: 11.5px;
+}
+
+.btn-danger { color: var(--accent-fail); }
+
+.btn-icon {
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* iOS-style switch: recessed track, springy knob. */
+.switch {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 18%, transparent);
+  box-shadow: inset 0 2px 5px rgba(15, 25, 55, 0.35), inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+  transition: background 0.25s ease;
+  flex: none;
+}
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(15, 25, 55, 0.4);
+  transition: transform 0.3s cubic-bezier(0.3, 1.4, 0.45, 1);
+}
+.switch.on { background: var(--control-accent); }
+.switch.on::after { transform: translateX(18px); }
+
+/* Segmented control. */
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+  box-shadow: inset 0 1px 3px rgba(15, 25, 55, 0.22);
+}
+.segmented button {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.segmented button.active {
+  color: var(--text);
+  background: var(--glass-fill-strong);
+  box-shadow: 0 1px 4px -1px rgba(15, 25, 55, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.segmented button:active { transform: scale(0.94); }
+
+/* Stepper. */
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+  box-shadow: inset 0 1px 3px rgba(15, 25, 55, 0.22);
+}
+.stepper button {
+  width: 30px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: var(--text-secondary);
+  transition: transform 0.15s ease;
+}
+.stepper button:active { transform: scale(0.85); }
+.stepper .stepper-value {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Springy check bounce. */
+@keyframes kw-check-pop {
+  0% { transform: scale(0.4); }
+  55% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+.check-pop { animation: kw-check-pop 0.4s cubic-bezier(0.3, 1.4, 0.45, 1); }
+
+/* Text inputs. */
+.field-input {
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 14px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  box-shadow: inset 0 1px 3px rgba(15, 25, 55, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+.field-input::placeholder { color: var(--text-tertiary); }
+.field-input:focus {
+  outline: none;
+  box-shadow:
+    inset 0 1px 3px rgba(15, 25, 55, 0.18),
+    0 0 0 2px color-mix(in srgb, var(--brand-a) 55%, transparent),
+    0 0 12px -2px color-mix(in srgb, var(--brand-a) 35%, transparent);
+  transition: box-shadow 0.2s ease;
+}
+
+select.field-input {
+  appearance: none;
+  padding-right: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23767d90' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+select.field-input:disabled { opacity: 0.5; cursor: default; }
+
+/* Titles get a whisper of depth against the glass. */
+.title-glass {
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+@media (prefers-color-scheme: dark) {
+  .title-glass { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass::before,
+  .glass > .kw-sheen::after,
+  .check-pop,
+  .glass-interactive,
+  .btn,
+  .switch::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
